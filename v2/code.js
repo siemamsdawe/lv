@@ -1,17 +1,20 @@
-let buttonSubtmi = document.querySelector("#button");
-    buttonSubtmi.addEventListener('click', check);
 document.querySelectorAll('.key').forEach( element => { 
     element.addEventListener('click', function(){
         keyboardAddLetter(element.getAttribute('data-value'))
         });
 });
+
 document.getElementById("enter").addEventListener('click', check);
 document.getElementById("cancel").addEventListener('click', cancel);
 document.getElementById("clearAll").addEventListener('click', clearAll);
 
 var valueInput = document.getElementById("txt");
+    valueInput.addEventListener('keyup', element => {if(element.code == "Enter") check()});
 
-const words = ["ROWER", "RURKA", "MYSZA", "LAMPA", "KOTKI", "SKLEP", "TRAWA", "KARTY", "TANIE", "KWIAT", "SZAFKA", "MISKA","DUSZA","BŁOTO","KRATA","PRACA","SERCE","KUFEL","PLAMA","MISJA","KLATA","ZAMEK","PŁYTA","SŁOWO","BRAMA","WYSPA",'ŚMIEĆ', 'GRACZ', 'DROGA', 'RANNY', 'CHATA', 'MUCHA','DESKA', 'PRAWO', 'NARTY', 'PIŁKA', 'ŁYDKA'];
+const words = ["ROWER", "RURKA", "MYSZA", "LAMPA", "KOTKI", "SKLEP", "TRAWA", "KARTY",
+"TANIE", "KWIAT", "SZAFKA", "MISKA","DUSZA","BŁOTO","KRATA","PRACA","SERCE","KUFEL",
+"PLAMA","MISJA","KLATA","ZAMEK","PŁYTA","SŁOWO","BRAMA","WYSPA","ŚMIEĆ", "GRACZ",
+"DROGA", "RANNY", "CHATA", "MUCHA","DESKA", "PRAWO", "NARTY", "PIŁKA", "ŁYDKA"];
 
 let word = words[Math.floor(Math.random() * words.length-1)];
 
@@ -73,8 +76,6 @@ function check()
             //helpArray = [1, 1, 1, 1, 1];
         }
 
-        console.log(helpArray);
-
         let contentGenerated = "";
         for (i = 0; i < 5; i++)
         {
@@ -101,7 +102,6 @@ function checIfWin()
     {
         //alert("win")
         valueInput.style.display = "none";
-        buttonSubtmi.style.display = "none";
         let x = 'output'+counter;
         document.getElementById(x).classList.add('coolWin');
     }
@@ -109,7 +109,8 @@ function checIfWin()
     {
         //alert("poprawne słoto to: " + randomWordString)
         valueInput.style.display = "none";
-        buttonSubtmi.style.display = "none";
     }
+
+    valueInput.value ="";
 }
 
