@@ -162,14 +162,6 @@
     animation: coolyellow 800ms ease;
 }
 
-button
-{
-    padding: 30px;
-    float: left;
-    border-radius: 20px;
-    margin-left: 10px;
-}
-
 #containerHeader
 {
     width: 500px;
@@ -223,7 +215,6 @@ input[type='text']
     text-align: center;
     padding: 0 0 0 25px; 
     display: block;
-    float: left;
 }
 .block
 {
@@ -249,7 +240,9 @@ input[type='text']
 
 #typing
 {
-    width: 500px;
+    width: 410px;
+    background-color: red;
+    margin: 0 auto 20px auto;
 }
 
 #containerFooter
@@ -309,4 +302,10 @@ input[type='text']
     padding-top: 18px;
     font-size: 20px;
     cursor: pointer;
+}
+
+nav
+{
+    width: 200px;
+    margin: 0 auto;
 }
